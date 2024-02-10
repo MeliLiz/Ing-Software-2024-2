@@ -27,9 +27,9 @@ def main():
                 entrada = False
                 mayoria = (sets + 1) / 2
             else:
-                print(rojo + "La entrada no es valida")
+                print(rojo + "El número de sets debe ser impar" + reset)
         except ValueError:
-            print(rojo + "La entrada no es valida")
+            print(rojo + "La entrada debe ser un número" + reset)
 
     contador_sets = 0
     while setsj1 != mayoria and setsj2 != mayoria:
@@ -125,9 +125,9 @@ def juego(j1, j2):
                             msj_ganador(j2)
                             return 2
                 else:
-                    print(rojo + "La entrada no es válida")
+                    print(rojo + "La entrada debe ser 1 ó 2" + reset)
             except ValueError:
-                print(rojo + "La entrada no es valida")
+                print(rojo + "La entrada debe ser 1 ó 2" + reset)
 
         if puntosj1 == 3 and puntosj2 == 3:
             deuce = True
