@@ -1,10 +1,22 @@
 
+rojo = "\033[91m"
+verde = "\033[92m"
+amarillo = "\033[93m"
+azul = "\033[94m"
+magenta = "\033[95m"
+cyan = "\033[96m"
+reset = "\033[0m"
+fondo_amarillo= "\033[103m"
+
 def main():
 
     j1 = input("Ingrese el nombre del jugador 1: ")
     j2 = input("Ingrese el nombre del jugador 2: ")
 
-    sets = setsj1 = setsj2 = 0
+    print(cyan + j1 + " es el jugador 1" + reset)
+    print(cyan + j2 + " es el jugador 2" + reset)
+
+    mayoria = setsj1 = setsj2 = 0
 
     entrada = True
 
@@ -15,54 +27,55 @@ def main():
                 entrada = False
                 mayoria = (sets + 1) / 2
             else:
-                print("La entrada no es valida")
+                print(rojo + "La entrada no es valida")
         except ValueError:
-            print("La entrada no es valida")
+            print(rojo + "La entrada no es valida")
 
-    contadorSets = 0
-    while(setsj1 != mayoria and setsj2 != mayoria):
-        contadorSets += 1
+    contador_sets = 0
+    while setsj1 != mayoria and setsj2 != mayoria:
+        contador_sets += 1
 
-        if contadorSets == 1:
-            print("Posicionarse en cancha")
-        elif contadorSets % 2 == 0:
-            print("Cambio de cancha")
-        print("\nSet " + str(contadorSets))
-        print("Sets: " + str(setsj1) + " - " + str(setsj2))
+        if contador_sets == 1:
+            print(verde + "\nPosicionarse en cancha")
+        elif contador_sets % 2 == 0:
+            print(verde + "Cambio de cancha")
+        print(magenta + "\nSet " + str(contador_sets))
+        print(magenta + "Sets: " + str(setsj1) + " - " + str(setsj2))
         if set(j1, j2) == 1:
             setsj1 += 1
         else:
             setsj2 += 1
 
-    print("Sets: " + str(setsj1) + " - " + str(setsj2))
+    print(magenta + "Sets: " + str(setsj1) + " - " + str(setsj2))
     if setsj1 > setsj2:
-        print("Ganador del partido: " + j1)
+        print(amarillo + "Ganador del partido: " + j1)
     else:
-        print("Ganador del partido" + j2)
+        print(amarillo + "Ganador del partido" + j2)
 
 def set(j1, j2):
+
     juegosj1 = juegosj2 = 0
 
     while (juegosj1 < 6 and juegosj2 < 6) or abs(juegosj1 - juegosj2) < 2 :
-        print("** Nuevo juego **")
-        print("Juegos: " + str(juegosj1) + " - " + str(juegosj2))
+        print(azul + "\n** Nuevo juego **")
+        print(azul + "Juegos: " + str(juegosj1) + " - " + str(juegosj2))
 
         if (juegosj1 + juegosj2) % 2 == 0 :
-            print("Saca " + j1)
+            print(verde + "Saca " + j1)
         else:
-            print("Saca " + j2)
+            print(verde + "Saca " + j2)
 
         if juego(j1, j2) == 1 :
             juegosj1 += 1
         else:
             juegosj2 += 1
 
-    print("Juegos: " + str(juegosj1) + " - " + str(juegosj2))
-    if juegosj1 > juegosj2 :
-        print("\n### Ganador del set: " + j1 + " ###")
+    print(azul + "Juegos: " + str(juegosj1) + " - " + str(juegosj2))
+    if juegosj1 > juegosj2:
+        print(magenta + "\n### Ganador del set: " + j1 + " ###")
         return 1
     else:
-        print("\n### Ganador del set: " + j2 + " ###")
+        print(cyan + "\n### Ganador del set: " + j2 + " ###")
         return 2
 
 def juego(j1, j2):
@@ -77,14 +90,14 @@ def juego(j1, j2):
     while seguir:
         contador_juego += 1
 
-        print("||||||| Partida" + str(contador_juego) + " |||||||")
-        print("Marcador: " + str(puntaje[puntosj1]) + " - " + str(puntaje[puntosj2]))
+        print(reset + "||||||| Partida" + str(contador_juego) + " |||||||")
+        print(reset + "Marcador: " + str(puntaje[puntosj1]) + " - " + str(puntaje[puntosj2]))
 
         while(entrada):
             try:
-                anotacion = int( input("Quién ganó el punto? (Ingresa 1 o 2): "))
+                anotacion = int( input(reset + "Quién ganó el punto? (Ingresa 1 o 2): "))
                 if anotacion == 1:
-                    #punto a j1
+                    # punto a j1
                     puntosj1 += 1
                     entrada = False
 
@@ -94,11 +107,11 @@ def juego(j1, j2):
                             puntosj1 = puntosj2 = 3
                         elif deucej1 == 0:
                             deucej1 += 1
-                        else: # Gana j1
+                        else:  # Gana j1
                             msj_ganador(j1)
                             return 1
 
-                elif anotacion == 2: #punto a j2
+                elif anotacion == 2:  # punto a j2
                     puntosj2 += 1
                     entrada = False
 
@@ -107,16 +120,16 @@ def juego(j1, j2):
                             deucej1 = deucej2 = 0
                             puntosj1 = puntosj2 = 3
                         elif deucej2 == 0:
-                            deucej2+= 1
-                        else: # Gana j2
+                            deucej2 += 1
+                        else:  # Gana j2
                             msj_ganador(j2)
                             return 2
                 else:
-                    print("La entrada no es válida")
+                    print(rojo + "La entrada no es válida")
             except ValueError:
-                print("La entrada no es valida")
+                print(rojo + "La entrada no es valida")
 
-        if puntosj1 == 3 and puntosj2 == 3 :
+        if puntosj1 == 3 and puntosj2 == 3:
             deuce = True
 
         if not deuce:
@@ -131,13 +144,7 @@ def juego(j1, j2):
 
 
 def msj_ganador(jugador):
-    print("°°°°°°° Ganador del juego: " + jugador + " °°°°°°°")
-
-
-
-
-
-
+    print(amarillo + "°°°°°°° Ganador del juego: " + jugador + " °°°°°°°")
 
 
 if __name__ == "__main__":
