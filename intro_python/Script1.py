@@ -18,18 +18,20 @@ def main():
 
     mayoria = setsj1 = setsj2 = 0
 
-    entrada = True
+    #entrada = True
 
-    while entrada:
-        try:
-            sets = int(input("Ingrese el número de sets a jugar: "))
-            if sets > 0 and sets % 2 == 1:
-                entrada = False
-                mayoria = (sets + 1) / 2
-            else:
-                print(rojo + "El número de sets debe ser impar" + reset)
-        except ValueError:
-            print(rojo + "La entrada debe ser un número" + reset)
+    #while entrada:
+        #try:
+            #sets = int(input("Ingrese el número de sets a jugar: "))
+    sets = 3
+            #if sets > 0 and sets % 2 == 1:
+                #entrada = False
+    mayoria = (sets + 1) / 2
+
+            #else:
+                #print(rojo + "El número de sets debe ser impar" + reset)
+       # except ValueError:
+            #print(rojo + "La entrada debe ser un número" + reset)
 
     contador_sets = 0
     while setsj1 != mayoria and setsj2 != mayoria:
@@ -50,7 +52,7 @@ def main():
     if setsj1 > setsj2:
         print(amarillo + "Ganador del partido: " + j1)
     else:
-        print(amarillo + "Ganador del partido" + j2)
+        print(amarillo + "Ganador del partido: " + j2)
 
 def set(j1, j2):
 

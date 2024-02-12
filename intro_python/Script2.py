@@ -1,14 +1,16 @@
-import sys
-
 
 # Montañas y valles
 #Contar valles
 def valles():
-    cadena = input("Ingrese la cadena de pasos: ")
-    for i in cadena:
-        if i != 'D' and i != "U":
-            print("Cadena no valida")
-            sys.exit()
+
+    seguir = True
+    while seguir:
+        cadena = input("Ingrese la cadena de pasos: ")
+        seguir = False
+        for i in cadena:
+            if i != 'D' and i != "U":
+                print("Cadena no valida")
+                seguir = True
 
     valles = 0
     contador = 0
@@ -121,3 +123,5 @@ if __name__ == "__main__":
     arbol.add(4)
 
     print(arbol.postorden())
+
+    valles()
