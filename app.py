@@ -21,9 +21,9 @@ if __name__ == '__main__':
         
         #ver_usuarios()
         #encontrar_usuario(30)
-        cambiar_nombre_usuario_por_id(61, "Alan")
-        #cambiar_nombre_usuario_por_nombre("Jorge", "Roberto")
-        eliminar_usuario(54)
+        #cambiar_nombre_usuario_por_id(40, "Alan")
+        #cambiar_nombre_usuario_por_nombre("Carlos", "Roberto")
+        #eliminar_usuario(31)####
         #eliminar_todos_los_usuarios()
         
         ##Pruebas de peliculas
@@ -35,7 +35,7 @@ if __name__ == '__main__':
         #eliminar_todas_las_peliculas()
         
         #Pruebas de rentas
-        #ver_rentas()
+        ver_rentas() #######
         #encontrar_renta(10)
         #cambiar_fecha_renta(10, "2021-10-10")
         #eliminar_renta(11)

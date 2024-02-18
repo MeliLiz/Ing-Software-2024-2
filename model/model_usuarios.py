@@ -9,24 +9,39 @@ def ver_usuarios():
 #Filtrar los registros de una tabla por id (solo que sea exactamente igual a)
 def encontrar_usuario(id_usuario):
     usuario = usuarios.query.filter(usuarios.idUsuario == id_usuario).first()
-    print(usuario)
+    if usuario is not None:
+        print(usuario)
+    else:
+        print("El usuario con id = "+ str(id_usuario) + " no existe")
     
 #Actualizar la columna nombre de un registro
 def cambiar_nombre_usuario_por_id(id_usuario, nombre_nuevo):
     usuario = usuarios.query.filter(usuarios.idUsuario == id_usuario).first()
-    usuario.nombre = nombre_nuevo
-    db.session.commit()
+    if usuario is not None:
+        usuario.nombre = nombre_nuevo
+        db.session.commit()
+    else:
+        print("El usuario con id = "+ str(id_usuario) + " no existe")
+
     
 def cambiar_nombre_usuario_por_nombre(nombre, nombre_nuevo):
     usuario = usuarios.query.filter(usuarios.nombre == nombre).first()
-    usuario.nombre = nombre_nuevo
-    db.session.commit()
+    if usuario is not None:
+        usuario.nombre = nombre_nuevo
+        db.session.commit()
+    else:
+        print("El usuario con nombre = "+ nombre + " no existe")
+
     
 #Eliminar un registro por id
 def eliminar_usuario(id_usuario):
     usuario = usuarios.query.filter(usuarios.idUsuario == id_usuario).first()
-    db.session.delete(usuario)
-    db.session.commit()
+    if usuario is not None:
+        db.session.delete(usuario)
+        db.session.commit()
+    else:
+        print("El usuario con id = "+ str(id_usuario) + " no existe")
+
     
 #Eliminar todos los registros
 def eliminar_todos_los_usuarios():
