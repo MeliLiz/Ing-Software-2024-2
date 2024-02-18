@@ -24,4 +24,4 @@ class usuarios(db.Model):
         self.superUser = superUser
 
     def __str__(self):
-        return f'Nombre:{self.nombre}\nEmail:{self.email}'
+        return f'Nombre:{self.nombre}\nEmail:{self.email}\n'
