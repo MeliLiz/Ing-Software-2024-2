@@ -142,10 +142,10 @@ def insertar_renta():
     
         
 if __name__== "__main__":
-    #insertar_registro()
+    insertar_registro()
     #filtrar("a")
     #cambiar_genero("El gran caballero de la derrota", "Aventura")
-    eliminar_rentas()
+    #eliminar_rentas()
     #insertar_renta()
     connection.close()
     print("Conexión cerrada")

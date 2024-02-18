@@ -3,6 +3,7 @@ from alchemyClasses import db
 from sqlalchemy import LargeBinary
 
 
+
 class usuarios(db.Model):
     __tablename__ = 'usuarios'
     idUsuario = Column(Integer, primary_key=True)
@@ -12,7 +13,7 @@ class usuarios(db.Model):
     password = Column(String(64))
     email = Column(String(500), nullable=True, unique=True)
     profilePicture = Column(LargeBinary, nullable=True)
-    superUser = Column(Integer, nullable=True) # 1 es superuser y 0 no lo es
+    superUser = Column(Integer, nullable=True) 
 
     def __init__(self, nombre, apPat, password, apMat=None, email=None, profilePicture=None, superUser=None):
         self.nombre = nombre

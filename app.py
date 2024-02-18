@@ -17,5 +17,26 @@ db.init_app(app)
 if __name__ == '__main__':
     with app.app_context():
         
+        ##Pruebas de usuarios
         
-        ver_rentas()
+        #ver_usuarios()
+        #encontrar_usuario(30)
+        cambiar_nombre_usuario_por_id(61, "Alan")
+        #cambiar_nombre_usuario_por_nombre("Jorge", "Roberto")
+        eliminar_usuario(54)
+        #eliminar_todos_los_usuarios()
+        
+        ##Pruebas de peliculas
+        #ver_peliculas()
+        #encontrar_pelicula(17)
+        #cambiar_nombre_peli_por_id(16, "El castillo vagabundo")
+        #cambiar_nombre_peli_por_nombre("El sorprendente secreto de la paz", "Los amigos")
+        #eliminar_pelicula(20)
+        #eliminar_todas_las_peliculas()
+        
+        #Pruebas de rentas
+        #ver_rentas()
+        #encontrar_renta(10)
+        #cambiar_fecha_renta(10, "2021-10-10")
+        #eliminar_renta(11)
+        #eliminar_todas_las_rentas()

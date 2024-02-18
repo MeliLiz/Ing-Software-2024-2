@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, String, DateTime, SmallInteger, ForeignKey
+
 from alchemyClasses import db
 
 class rentar(db.Model):
@@ -10,6 +11,8 @@ class rentar(db.Model):
     fecha_renta = Column(DateTime)
     dias_de_renta = Column(Integer, nullable=True)
     estatus = Column(SmallInteger, nullable=True)
+    users = db.relationship("usuarios", backref=db.backref("rentasu", cascade="all, delete-orphan"))
+    pelis = db.relationship("peliculas", backref=db.backref("rentasp", cascade="all, delete-orphan"))
     
     def __init__(self, idUsuario, idPelicula, fecha_renta, dias_de_renta=5, estatus=0):
         self.idUsuario = idUsuario

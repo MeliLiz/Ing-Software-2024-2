@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from alchemyClasses import db
 
+
 class peliculas(db.Model):
     __tablename__ ='peliculas'
     idPelicula = Column(Integer, primary_key=True)

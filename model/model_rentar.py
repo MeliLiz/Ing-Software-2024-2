@@ -8,7 +8,7 @@ def ver_rentas():
         
 #Filtrar los registros de una tabla por id (solo que sea exactamente igual a)
 def encontrar_renta(id_renta):
-    renta = rentar.query.find(rentar.idRentar == id_renta).first()
+    renta = rentar.query.filter(rentar.idRentar == id_renta).first()
     print(renta)
     
 #Modificar la fecha de la renta
