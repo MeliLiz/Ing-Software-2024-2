@@ -1,12 +1,12 @@
-from sqlalchemy import Column, Integer, String, DateTime, SmallInteger
+from sqlalchemy import Column, Integer, String, DateTime, SmallInteger, ForeignKey
 from alchemyClasses import db
 
 class rentar(db.Model):
     
     __tablename__ = 'rentar'
     idRentar = Column(Integer, primary_key=True)
-    idUsuario = Column(Integer)
-    idPelicula = Column(Integer)
+    idUsuario = Column(Integer, ForeignKey('usuarios.idUsuario'))
+    idPelicula = Column(Integer, ForeignKey('peliculas.idPelicula'))
     fecha_renta = Column(DateTime)
     dias_de_renta = Column(Integer, nullable=True)
     estatus = Column(SmallInteger, nullable=True)
