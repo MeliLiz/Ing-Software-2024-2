@@ -2,7 +2,6 @@ from flask import Flask
 from sqlalchemy import and_, or_
 
 from alchemyClasses import db
-from alchemyClasses.usuarios import usuarios
 
 from model.model_rentar import ver_rentas, encontrar_renta, cambiar_fecha_renta, eliminar_renta, eliminar_todas_las_rentas
 from model.model_peliculas import ver_peliculas, encontrar_pelicula, cambiar_nombre_peli_por_id, cambiar_nombre_peli_por_nombre, eliminar_pelicula, eliminar_todas_las_peliculas
