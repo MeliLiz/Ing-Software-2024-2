@@ -7,6 +7,10 @@ with grant option;
 
 use lab_ing_software;
 
+select * from usuarios;
+select * from peliculas;
+select * from rentar;
+
 CREATE TABLE `usuarios` (
   `idUsuario` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(200) NOT NULL,
