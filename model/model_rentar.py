@@ -16,6 +16,13 @@ def encontrar_renta(id_renta):
 
     
 #Modificar la fecha de la renta
+def cambiar_fecha_random(fecha_nueva):
+    rentas = rentar.query.all()
+    if len(rentas) >0:#Cambiar el nombre del usuario de en medio
+        renta = rentas[len(rentas)//2]
+        renta.fecha_renta = fecha_nueva
+        db.session.commit()
+
 def cambiar_fecha_renta(id_renta, fecha_nueva):
     renta = rentar.query.filter(rentar.idRentar == id_renta).first()
     if renta is not None:

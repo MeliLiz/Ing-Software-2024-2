@@ -15,6 +15,13 @@ def encontrar_pelicula(id_pelicula):
         print("La pelicula con id = "+ str(id_pelicula) + " no existe")
     
 #Actualizar la columna nombre de un registro
+def cambiar_nombre_peli_random(nombre_nuevo):
+    pelis = peliculas.query.all()
+    if len(pelis)>0:#Cambiar el nombre del usuario de en medio
+        peli = pelis[len(pelis)//2]
+        peli.nombre = nombre_nuevo
+        db.session.commit()
+
 def cambiar_nombre_peli_por_id(id_pelicula, nombre_nuevo):
     pelicula = peliculas.query.filter(peliculas.idPelicula == id_pelicula).first()
     if pelicula is not None:

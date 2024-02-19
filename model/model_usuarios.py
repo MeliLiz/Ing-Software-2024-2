@@ -15,6 +15,15 @@ def encontrar_usuario(id_usuario):
         print("El usuario con id = "+ str(id_usuario) + " no existe")
     
 #Actualizar la columna nombre de un registro
+def cambiar_nombre_usuario_random(nombre_nuevo):
+    users = usuarios.query.all()
+    if len(users)>0:#Cambiar el nombre del usuario de en medio
+        user = users[len(users)//2]
+        user.nombre = nombre_nuevo
+        db.session.commit()
+            
+        
+
 def cambiar_nombre_usuario_por_id(id_usuario, nombre_nuevo):
     usuario = usuarios.query.filter(usuarios.idUsuario == id_usuario).first()
     if usuario is not None:

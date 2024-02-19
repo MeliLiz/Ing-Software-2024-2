@@ -3,9 +3,9 @@ from sqlalchemy import and_, or_
 
 from alchemyClasses import db
 
-from model.model_rentar import ver_rentas, encontrar_renta, cambiar_fecha_renta, eliminar_renta, eliminar_todas_las_rentas
-from model.model_peliculas import ver_peliculas, encontrar_pelicula, cambiar_nombre_peli_por_id, cambiar_nombre_peli_por_nombre, eliminar_pelicula, eliminar_todas_las_peliculas
-from model.model_usuarios import ver_usuarios, encontrar_usuario, cambiar_nombre_usuario_por_id, cambiar_nombre_usuario_por_nombre, eliminar_usuario, eliminar_todos_los_usuarios
+from model.model_rentar import ver_rentas, encontrar_renta, cambiar_fecha_random,cambiar_fecha_renta, eliminar_renta, eliminar_todas_las_rentas
+from model.model_peliculas import ver_peliculas, encontrar_pelicula, cambiar_nombre_peli_random,cambiar_nombre_peli_por_id, cambiar_nombre_peli_por_nombre, eliminar_pelicula, eliminar_todas_las_peliculas
+from model.model_usuarios import ver_usuarios, encontrar_usuario, cambiar_nombre_usuario_random,cambiar_nombre_usuario_por_id, cambiar_nombre_usuario_por_nombre, eliminar_usuario, eliminar_todos_los_usuarios
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://lab:Developer123!@localhost:3306/lab_ing_software'
@@ -23,6 +23,7 @@ if __name__ == '__main__':
         #encontrar_usuario(30)
         #cambiar_nombre_usuario_por_id(40, "Alan")
         #cambiar_nombre_usuario_por_nombre("Carlos", "Roberto")
+        cambiar_nombre_usuario_random("Jimin")
         #eliminar_usuario(31)####
         #eliminar_todos_los_usuarios()
         
@@ -31,12 +32,14 @@ if __name__ == '__main__':
         #encontrar_pelicula(17)
         #cambiar_nombre_peli_por_id(16, "El castillo vagabundo")
         #cambiar_nombre_peli_por_nombre("El sorprendente secreto de la paz", "Los amigos")
+        cambiar_nombre_peli_random("La leyenda de 1900")
         #eliminar_pelicula(20)
         #eliminar_todas_las_peliculas()
         
         #Pruebas de rentas
-        ver_rentas() #######
+        #ver_rentas() #######
         #encontrar_renta(10)
         #cambiar_fecha_renta(10, "2021-10-10")
+        #cambiar_fecha_random('2021-10-10')
         #eliminar_renta(11)
         #eliminar_todas_las_rentas()
