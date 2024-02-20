@@ -2,6 +2,9 @@ import pymysql.cursors
 import random
 import datetime
 
+from cryptoUtils.CryptoUtils import cipher
+from hashlib import sha256
+
 # Connect to the database
 connection = pymysql.connect(host='localhost',
                              user='lab',
@@ -31,10 +34,10 @@ def genera_email(nombre, apellido):
     return nombre+ apellido +genera_password(3)+random.choice(correos)
 
 def genera_password(num):
-    password = ""
+    pre_password = ""
     for i in range(num):
-        password += random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
-    return password
+        pre_password += random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+    return sha256(cipher(pre_password)).hexdigest()
 
 def genera_titulo():
     return random.choice(calificadores) + " " + random.choice(sustantivos) + " " + random.choice(lugares)
