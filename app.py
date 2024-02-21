@@ -19,11 +19,169 @@ if __name__ == '__main__':
         
         ##Pruebas de usuarios
         
+        print("**Clon buster**")
+        no_valido = True
+        while no_valido:
+            print("USUARIOS")
+            print("1) Ver usuarios")
+            print("2) Encontrar usuario por id")
+            print("3) Cambiar nombre de usuario por id")
+            print("4) Cambiar nombre de usuario por nombre")
+            print("5) Cambiar nombre de usuario random")
+            print("6) Eliminar usuario por id")
+            print("7) Eliminar todos los usuarios")
+            print("PELICULAS")
+            print("8) Ver peliculas")
+            print("9) Encontrar pelicula por id")
+            print("10) Cambiar nombre de pelicula por id")
+            print("11) Cambiar nombre de pelicula por nombre")
+            print("12) Cambiar nombre de pelicula random")
+            print("13) Eliminar pelicula por id")
+            print("14) Eliminar todas las peliculas")
+            print("RENTAS")
+            print("15) Ver rentas")
+            print("16) Encontrar renta por id")
+            print("17) Cambiar fecha de renta por id")
+            print("18) Cambiar fecha de renta random")
+            print("19) Eliminar renta por id")
+            print("20) Eliminar todas las rentas")
+            entrada = input("\nIngresa el número de opción que prefieras: ")
+            
+            
+            try:
+                entrada = int(entrada)
+                if entrada <1 or entrada >20:
+                    print("El número ingresado no es válido")
+                else:
+                    no_valido = False
+                    b = True
+                    if entrada==1: #Ver registros de usuarios
+                        ver_usuarios()
+                    elif entrada==2: #Encontrar usuario por id
+                        while b:
+                            try:
+                                id_usuario = input("Ingresa el id del usuario: ")
+                                id_usuario = int(id_usuario)
+                                b = False
+                                encontrar_usuario(id_usuario)
+                            except:
+                                print("Debes ingresar un número")
+                        
+                    elif entrada==3: #Cambiar nombre de usuario por id
+                        while b:
+                            try:
+                                id_usuario = input("Ingresa el id del usuario: ")
+                                id_usuario = int(id_usuario)
+                                b = False
+                                nombre = input("Ingresa el nuevo nombre: ")
+                                cambiar_nombre_usuario_por_id(id_usuario, nombre)
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==4: #Cambiar nombre de usuario por nombre
+                        nombre = input("Ingresa el nombre del usuario: ")
+                        nuevo_nombre = input("Ingresa el nuevo nombre: ")
+                        cambiar_nombre_usuario_por_nombre(nombre, nuevo_nombre)
+                    elif entrada==5: #Cambiar nombre de usuario random
+                        nuevo_nombre = input("Ingresa el nuevo nombre: ")
+                        cambiar_nombre_usuario_random(nuevo_nombre)
+                    elif entrada==6:
+                        while b:
+                            try:
+                                id_usuario = input("Ingresa el id del usuario: ")
+                                id_usuario = int(id_usuario)
+                                b = False
+                                eliminar_usuario(id_usuario)
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==7:
+                        eliminar_todos_los_usuarios()
+                    elif entrada==8:
+                        ver_peliculas()
+                    elif entrada==9:
+                        while b:
+                            try:
+                                id_peli = input("Ingresa el id de la película: ")
+                                id_peli = int(id_peli)
+                                b = False
+                                encontrar_pelicula(id_peli)
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==10:
+                         while b:
+                            try:
+                                id_peli = input("Ingresa el id de la película: ")
+                                id_peli = int(id_peli)
+                                b = False
+                                nombre = input("Ingresa el nuevo nombre: ")
+                                cambiar_nombre_peli_por_id(id_peli, nombre)
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==11:
+                        nombre = input("Ingresa el nombre de la pelicula: ")
+                        nuevo_nombre = input("Ingresa el nuevo nombre: ")
+                        cambiar_nombre_peli_por_nombre(nombre, nuevo_nombre)
+                    elif entrada==12:
+                        nuevo_nombre = input("Ingresa el nuevo nombre: ")
+                        cambiar_nombre_peli_random(nuevo_nombre)
+                    elif entrada==13:
+                        while b:
+                            try:
+                                id_peli = input("Ingresa el id de la película: ")
+                                id_peli = int(id_peli)
+                                b = False
+                                eliminar_pelicula(id_peli)
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==14:
+                        eliminar_todas_las_peliculas()
+                    elif entrada==15:
+                        ver_rentas()
+                    elif entrada==16:
+                        while b:
+                            try:
+                                id_renta = input("Ingresa el id de la renta: ")
+                                id_renta = int(id_renta)
+                                b = False
+                                encontrar_renta(id_renta)
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==17:
+                        while b:
+                            try:
+                                id_renta = input("Ingresa el id de la renta: ")
+                                id_renta = int(id_renta)
+                                b = False
+                                cambiar_fecha_renta(id_renta, "2021-10-10")
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==18:
+                        while b:
+                            try:
+                                b = False
+                                cambiar_fecha_random("2021-10-10")
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==19:
+                        while b:
+                            try:
+                                id_renta = input("Ingresa el id de la renta: ")
+                                id_renta = int(id_renta)
+                                b = False
+                                eliminar_renta(id_renta)
+                            except:
+                                print("Debes ingresar un número")
+                    elif entrada==20:
+                        eliminar_todas_las_rentas() 
+            except:
+                print("Debes ingresar un número")
+                
+            
+                
         #ver_usuarios()
         #encontrar_usuario(30)
         #cambiar_nombre_usuario_por_id(40, "Alan")
         #cambiar_nombre_usuario_por_nombre("Carlos", "Roberto")
-        cambiar_nombre_usuario_random("Jimin")
+        #cambiar_nombre_usuario_random("Jimin")
         #eliminar_usuario(31)####
         #eliminar_todos_los_usuarios()
         
@@ -32,7 +190,7 @@ if __name__ == '__main__':
         #encontrar_pelicula(17)
         #cambiar_nombre_peli_por_id(16, "El castillo vagabundo")
         #cambiar_nombre_peli_por_nombre("El sorprendente secreto de la paz", "Los amigos")
-        cambiar_nombre_peli_random("La leyenda de 1900")
+        #cambiar_nombre_peli_random("La leyenda de 1900")
         #eliminar_pelicula(20)
         #eliminar_todas_las_peliculas()
         

@@ -31,7 +31,13 @@ def genera_apellido():
     
 def genera_email(nombre, apellido):
     correos = ["@gmail.com", "@hotmail.com", "@outlook.com", "@yahoo.com", "@live.com"]
-    return nombre+ apellido +genera_password(3)+random.choice(correos)
+    return nombre+ apellido +num_aleatorio(3)+random.choice(correos)
+
+def num_aleatorio(num):
+    numero = ""
+    for i in range(num):
+        numero += random.choice("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+    return numero
 
 def genera_password(num):
     pre_password = ""
