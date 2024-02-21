@@ -150,15 +150,24 @@ if __name__ == '__main__':
                             try:
                                 id_renta = input("Ingresa el id de la renta: ")
                                 id_renta = int(id_renta)
-                                b = False
-                                cambiar_fecha_renta(id_renta, "2021-10-10")
+                                fecha = input("Ingresa la nueva fecha en formato yyyy-mm-dd : ") 
+                                #Verificar que la fecha tiene el formato correcto
+                                if len(fecha.split('-')) != 3 or not (fecha[0:4].isdigit() and fecha[5:7].isdigit() and fecha[8:10].isdigit()):
+                                    print("La fecha ingresada no tiene el formato correcto")
+                                else:
+                                    b = False
+                                    cambiar_fecha_renta(id_renta, fecha)
                             except:
                                 print("Debes ingresar un número")
                     elif entrada==18:
                         while b:
                             try:
-                                b = False
-                                cambiar_fecha_random("2021-10-10")
+                                fecha = input("Ingresa la nueva fecha en formato yyyy-mm-dd : ") 
+                                if len(fecha.split('-')) != 3 or not (fecha[0:4].isdigit() and fecha[5:7].isdigit() and fecha[8:10].isdigit()):
+                                    print("La fecha ingresada no tiene el formato correcto")
+                                else:
+                                    b = False
+                                    cambiar_fecha_random(fecha)
                             except:
                                 print("Debes ingresar un número")
                     elif entrada==19:
