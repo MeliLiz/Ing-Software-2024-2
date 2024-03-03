@@ -20,20 +20,20 @@
                 <h1 class="text-white mt-5 text-center">Registro de película</h1>
             </div>
 
-            <form>
+            <form method="POST">
                 <fieldset>
 
                     <div class="mb-3">
                         <label class="col-form-label mt-4 text-white" for="inputNombre">Nombre de la película</label>
-                        <input type="text" class="form-control" placeholder="Nombre de pelicula" id="inputNombre" required>
+                        <input type="text" class="form-control" placeholder="Nombre de pelicula" id="inputNombre" name="inputNombre" required>
                         <div class="invalid-feedback">
                             Por favor, ingresa el nombre de la película.
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label class="col-form-label mt-4 text-white" for="inputApellidoPaterno">Género</label>
-                        <input type="text" class="form-control" placeholder="Género de la película" id="inputApellidoPaterno" required>
+                        <label class="col-form-label mt-4 text-white" for="genero">Género</label>
+                        <input type="text" class="form-control" placeholder="Género de la película" id="genero" name="genero" required>
                         <div class="invalid-feedback">
                             Por favor, ingresa el género de la película.
                         </div>
@@ -41,7 +41,7 @@
 
                     <div class="mb-3">
                         <label for="inputDuracion" class="form-label mt-4 text-white">Duración (minutos)</label>
-                        <input type="number" class="form-control" id="inputDuracion" placeholder="Duración en minutos" min="1" required>
+                        <input type="number" class="form-control" id="inputDuracion" name="inputDuracion" placeholder="Duración en minutos" min="1" required>
                         <div class="invalid-feedback">
                             Por favor, ingresa una duración válida en minutos.
                         </div>
@@ -49,7 +49,7 @@
 
                     <div class="mb-3">
                         <label for="inputInventario" class="form-label mt-4 text-white">En inventario</label>
-                        <input type="number" class="form-control" id="inputInventario" placeholder="Duración en minutos" min="0" required>
+                        <input type="number" class="form-control" id="inputInventario" name="inputInventario" placeholder="Duración en minutos" min="0" required>
                         <div class="invalid-feedback">
                             Por favor, ingresa un número de inventario válido.
                         </div>
