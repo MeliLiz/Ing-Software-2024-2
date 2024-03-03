@@ -32,4 +32,13 @@ def agregar_usuario():
         
         return render_template("Exito.html")
     
+@usuario_blueprint.route('/borrar', methods=['GET', 'POST'])
+def borrar_usuario():
+    if request.method == "GET":
+        return render_template('BorrarUser.html')
+    else:
+        id_usuario = request.form["idCliente"]
+        print(id_usuario)
+        mu.eliminar_usuario(id_usuario)
+        return render_template("Exito.html")
 

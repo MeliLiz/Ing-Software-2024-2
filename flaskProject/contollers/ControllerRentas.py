@@ -26,3 +26,5 @@ def agregar_renta():
         mr.crear_renta(id_usuario, id_pelicula, fecha_renta, dias_renta, estatus)
         
         return render_template("Exito.html")
+    
+#@renta_blueprint.route('/borrar')
