@@ -1,0 +1,11 @@
+.centrar{
+    min-height: 100vh;
+}
+
+.ancho{
+    min-width: 100%;
+}
+
+.fuente-grande{
+    font-size: 2em;
+}
