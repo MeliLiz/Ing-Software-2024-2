@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template, flash, url_for
-from alchemyClasses import db
+from model import model_peliculas as mp
 
 pelicula_blueprint = Blueprint('pelicula', __name__, url_prefix='/pelicula')
 
