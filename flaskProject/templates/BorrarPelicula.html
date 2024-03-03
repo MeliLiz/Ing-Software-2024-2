@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ClonBuster: Borrar usuario</title>
+    <title>ClonBuster: Borrar película</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -17,15 +17,15 @@
         <div class="row">
 
             <div>
-                <h1 class="text-white mt-5 text-center">Borrar usuario</h1>
+                <h1 class="text-white mt-5 text-center">Borrar película</h1>
             </div>
 
             <form method="POST">
                 <fieldset>
 
                     <div class="mb-3">
-                        <label for="idCliente" class="form-label mt-4 text-white">Id del usuario a borrar</label>
-                        <input type="number" class="form-control" id="idCliente" name="idCliente" placeholder="Id del usuario" min="1" required>
+                        <label for="idPeli" class="form-label mt-4 text-white">Id de la película a borrar</label>
+                        <input type="number" class="form-control" id="idPeli" name="idPeli" placeholder="Id de la película" min="1" required>
                         <div class="invalid-feedback">
                             Por favor, ingresa un id válido.
                         </div>
@@ -33,7 +33,7 @@
 
                     <div class="alert alert-dismissible alert-warning">
                         <h4 class="alert-heading">Cuidado!</h4>
-                        <p class="mb-0">Toma en cuenta que si borras al usuario, también se borrarán sus rentas</p>
+                        <p class="mb-0">Toma en cuenta que si borras una pelúcula, también se borrarán sus registros de renta</p>
                       </div>
 
                     <div class="text-center">

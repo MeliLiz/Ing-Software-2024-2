@@ -27,4 +27,13 @@ def agregar_renta():
         
         return render_template("Exito.html")
     
-#@renta_blueprint.route('/borrar')
+@renta_blueprint.route('/borrar', methods = ['GET', 'POST'])
+def borrar_renta():
+    if request.method == "GET":
+        return render_template('BorrarRenta.html')
+    else:
+        id_renta = request.form["idRenta"]
+        print(id_renta)
+        mr.eliminar_renta(id_renta)
+        
+        return render_template("Exito.html")

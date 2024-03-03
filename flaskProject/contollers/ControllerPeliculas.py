@@ -21,3 +21,14 @@ def agregar_pelicula():
         mp.crear_pelicula(nombre, genero, duracion, inventario)
         
         return render_template("Exito.html")
+    
+@pelicula_blueprint.route('/borrar', methods = ['GET', 'POST'])
+def eliminar_pelicula():
+    if request.method == "GET":
+        return render_template('BorrarPelicula.html')
+    else:
+        id_pelicula = request.form["idPeli"]
+        print(id_pelicula)
+        mp.eliminar_pelicula(id_pelicula)
+        
+        return render_template("Exito.html")
