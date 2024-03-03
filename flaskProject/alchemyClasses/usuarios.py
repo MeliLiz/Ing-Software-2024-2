@@ -25,4 +25,4 @@ class usuarios(db.Model):
         self.superUser = superUser
 
     def __str__(self):
-        return f'Nombre:{self.nombre}\nEmail:{self.email}\n'
+        return f'{self.nombre},{self.apPat},{self.apMat},{self.email},{self.superUser},{self.password}'

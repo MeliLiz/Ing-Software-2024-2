@@ -19,6 +19,22 @@ def encontrar_usuario(id_usuario):
     usuario = usuarios.query.filter(usuarios.idUsuario == id_usuario).first()
     if usuario is not None:
         print(usuario)
+        return str(usuario)
+    else:
+        print("El usuario con id = "+ str(id_usuario) + " no existe")
+
+# Actualizar un usuario completo
+def editar_usuario(id_usuario, nombre_nuevo, apPat_nuevo, password_nuevo, apMat_nuevo, email_nuevo, profilePicture_nuevo, superUser_nuevo):
+    usuario = usuarios.query.filter(usuarios.idUsuario == id_usuario).first()
+    if usuario is not None:
+        usuario.nombre = nombre_nuevo
+        usuario.apPat = apPat_nuevo
+        usuario.password = password_nuevo
+        usuario.apMat = apMat_nuevo
+        usuario.email = email_nuevo
+        usuario.profilePicture = profilePicture_nuevo
+        usuario.superUser = superUser_nuevo
+        db.session.commit()
     else:
         print("El usuario con id = "+ str(id_usuario) + " no existe")
         
