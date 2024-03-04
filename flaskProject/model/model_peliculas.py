@@ -20,7 +20,8 @@ def encontrar_pelicula(id_pelicula):
         return str(pelicula)
     else:
         print("La pelicula con id = "+ str(id_pelicula) + " no existe")
- 
+        return -1
+        
  # Editar_pelicula completa
 def editar_pelicula(id_pelicula, nombre_nuevo, genero_nuevo, duracion_nueva, inventario_nuevo):
     pelicula = peliculas.query.filter(peliculas.idPelicula == id_pelicula).first()
@@ -78,9 +79,10 @@ def eliminar_pelicula(id_pelicula):
     if pelicula is not None:
         db.session.delete(pelicula)
         db.session.commit()
+        return 0
     else:
         print("La pelicula con id = "+ str(id_pelicula) + " no existe")
-
+        return -1
     
 #Eliminar todos los registros
 def eliminar_todas_las_peliculas():

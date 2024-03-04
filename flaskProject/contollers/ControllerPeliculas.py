@@ -29,9 +29,12 @@ def eliminar_pelicula():
     else:
         id_pelicula = request.form["idPeli"]
         print(id_pelicula)
-        mp.eliminar_pelicula(id_pelicula)
+        ret = mp.eliminar_pelicula(id_pelicula)
         
-        return render_template("Exito.html")
+        if ret == -1:
+            return render_template("BorrarPelicula.html", mensaje="La pelicula con id = "+id_pelicula+" no existe")
+        else:
+            return render_template("Exito.html")
     
 @pelicula_blueprint.route('/edit', methods = ["GET","POST"])
 def editar_pelicula():
@@ -40,8 +43,11 @@ def editar_pelicula():
     else:
         id_pelicula = request.form["idPeli"]
         print(id_pelicula)
-        
-        return redirect(url_for('pelicula.editar_pelicula_form', id_pelicula = id_pelicula))
+        res = mp.encontrar_pelicula(id_pelicula)
+        if res == -1:
+            return render_template("EditarPelicula.html", mensaje="La pelicula con id = "+id_pelicula+" no existe")
+        else:
+            return redirect(url_for('pelicula.editar_pelicula_form', id_pelicula = id_pelicula))
     
     
 @pelicula_blueprint.route('/edit/<id_pelicula>', methods = ["GET", "POST"])

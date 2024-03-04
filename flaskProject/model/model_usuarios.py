@@ -39,8 +39,10 @@ def editar_usuario(id_usuario, nombre_nuevo, apPat_nuevo, password_nuevo, apMat_
         usuario.profilePicture = profilePicture_nuevo
         usuario.superUser = superUser_nuevo
         db.session.commit()
+        return 0
     else:
         print("El usuario con id = "+ str(id_usuario) + " no existe")
+        return -1
         
 # Actualizar el nombre de un usuario por su id
 def cambiar_nombre_usuario_por_id(id_usuario, nombre_nuevo):

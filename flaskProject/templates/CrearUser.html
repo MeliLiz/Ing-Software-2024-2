@@ -41,7 +41,7 @@
 
                     <div class="mb-3">
                         <label class="col-form-label mt-4 text-white" for="inputApellidoMaterno">Apellido materno</label>
-                        <input type="text" class="form-control" placeholder="Apellido aquí" id="inputApellidoMaterno" name="inputApellidoMaterno" required {% if apellidoM%}value={{apellidoM}}{% endif %}>
+                        <input type="text" class="form-control" placeholder="Apellido aquí" id="inputApellidoMaterno" name="inputApellidoMaterno" {% if apellidoM%}value={{apellidoM}}{% endif %}>
                         <div class="invalid-feedback">
                             Por favor, ingresa tu apellido materno.
                         </div>
@@ -49,7 +49,7 @@
 
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label mt-4 text-white">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$" required>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$">
                         <div class="invalid-feedback">
                             Por favor, ingresa un correo electrónico válido.
                         </div>
