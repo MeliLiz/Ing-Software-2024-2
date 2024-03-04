@@ -42,6 +42,7 @@ def borrar_usuario():
         mu.eliminar_usuario(id_usuario)
         return render_template("Exito.html")
 
+
 @usuario_blueprint.route('/edit', methods=['GET', 'POST'])
 def editar_usuario():
     if request.method == "GET":
@@ -52,7 +53,7 @@ def editar_usuario():
         
         return redirect(url_for('usuario.editar_usuario_form', id_usuario = id_usuario))
         
-        #return render_template("Exito.html")
+  
     
 @usuario_blueprint.route('/edit/<id_usuario>', methods=['GET', 'POST'])
 def editar_usuario_form(id_usuario):

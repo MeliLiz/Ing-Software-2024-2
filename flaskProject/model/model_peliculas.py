@@ -18,8 +18,23 @@ def encontrar_pelicula(id_pelicula):
     pelicula = peliculas.query.filter(peliculas.idPelicula == id_pelicula).first()
     if pelicula is not None:
         print(pelicula)
+        return str(pelicula)
     else:
         print("La pelicula con id = "+ str(id_pelicula) + " no existe")
+ 
+ # Editar_pelicula completa
+def editar_pelicula(id_pelicula, nombre_nuevo, genero_nuevo, duracion_nueva, inventario_nuevo):
+    pelicula = peliculas.query.filter(peliculas.idPelicula == id_pelicula).first()
+    if pelicula is not None:
+        pelicula.nombre = nombre_nuevo
+        pelicula.genero = genero_nuevo
+        pelicula.duracion = duracion_nueva
+        pelicula.inventario = inventario_nuevo
+        db.session.commit()
+    else:
+        print("La pelicula con id = "+ str(id_pelicula) + " no existe")
+        
+ 
         
 # Update the name of a movie by its id
 def cambiar_nombre_peli_por_id(id_pelicula, nombre_nuevo):
