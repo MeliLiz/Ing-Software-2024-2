@@ -73,3 +73,8 @@ def editar_estatus_renta_form(id_renta):
         mr.cambiar_estatus_renta_por_id(id_renta, estatus)
         
         return render_template("Exito.html")
+    
+@renta_blueprint.route('/rentas')
+def mostrar_rentas():
+    rentas = mr.ver_rentas()
+    return render_template("MostrarRentas.html", rentas=rentas)

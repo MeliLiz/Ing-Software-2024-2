@@ -11,8 +11,7 @@ def crear_renta(idUsuario, idPelicula, fecha_renta, dias_de_renta=5, estatus=0):
     
 #Ver los registros de una tabla
 def ver_rentas():
-    for renta in rentar.query.all():
-        print(renta)
+    return rentar.query.all()
         
         
 #Filtrar los registros de una tabla por id (solo que sea exactamente igual a)
