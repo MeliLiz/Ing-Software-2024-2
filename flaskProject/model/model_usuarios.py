@@ -6,8 +6,12 @@ from alchemyClasses import db
 #Crear un nuevo registro
 def crear_usuario(nombre, apPat, password, apMat=None, email=None, profilePicture=None, superUser=None):
     nuevo_usuario = usuarios(nombre, apPat, password, apMat, email, profilePicture, superUser)
-    db.session.add(nuevo_usuario)
-    db.session.commit()
+    try:
+        db.session.add(nuevo_usuario)
+        db.session.commit()
+        return 0
+    except:
+        return -1
 
 #Ver los registros de una tabla
 def ver_usuarios():
