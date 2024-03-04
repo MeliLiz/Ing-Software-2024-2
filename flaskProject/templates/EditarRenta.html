@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ClonBuster: Borrar renta</title>
+    <title>ClonBuster: Editar renta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -17,14 +17,14 @@
         <div class="row">
 
             <div>
-                <h1 class="text-white mt-5 text-center">Borrar renta</h1>
+                <h1 class="text-white mt-5 text-center">Editar estatus de renta</h1>
             </div>
 
             <form method="POST">
                 <fieldset>
 
                     <div class="mb-3">
-                        <label for="idRenta" class="form-label mt-4 text-white">Id del registro de renta a borrar</label>
+                        <label for="idRenta" class="form-label mt-4 text-white">Id del registro de renta a editar</label>
                         <input type="number" class="form-control" id="idRenta" name="idRenta" placeholder="Id de la renta" min="1" required>
                         <div class="invalid-feedback">
                             Por favor, ingresa un id válido.
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-info mb-5 mt-5">Borrar</button>
+                        <button type="submit" class="btn btn-info mb-5 mt-5">Aceptar</button>
                     </div>
 
                 </fieldset>

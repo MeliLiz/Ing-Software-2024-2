@@ -20,6 +20,7 @@ def encontrar_renta(id_renta):
     renta = rentar.query.filter(rentar.idRentar == id_renta).first()
     if renta is not None:
         print(renta)
+        return str(renta)
     else:
         print("La renta con id = "+ str(id_renta) + " no existe")
 
