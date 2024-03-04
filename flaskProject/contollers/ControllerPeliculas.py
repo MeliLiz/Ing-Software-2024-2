@@ -71,4 +71,8 @@ def editar_pelicula_form(id_pelicula):
         return render_template("Exito.html")
 
 
+@pelicula_blueprint.route('/peliculas')
+def mostrar_peliculas():
+    peliculas = mp.ver_peliculas()
+    return render_template("MostrarPeliculas.html", peliculas=peliculas)
         

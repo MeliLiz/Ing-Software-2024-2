@@ -10,8 +10,7 @@ def crear_pelicula(nombre, genero=None, duracion=None, inventario=1):
 
 #Ver los registros de una tabla
 def ver_peliculas():
-    for pelicula in peliculas.query.all():
-        print(pelicula)
+    return peliculas.query.all()
         
 #Filtrar los registros de una tabla por id (solo que sea exactamente igual a)
 def encontrar_pelicula(id_pelicula):
