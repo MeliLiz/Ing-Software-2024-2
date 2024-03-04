@@ -23,6 +23,7 @@ class usuarios(db.Model):
         self.email = email
         self.profilePicture = profilePicture
         self.superUser = superUser
+        
 
     def __str__(self):
         return f'{self.nombre},{self.apPat},{self.apMat},{self.email},{self.superUser},{self.password}'

@@ -11,8 +11,7 @@ def crear_usuario(nombre, apPat, password, apMat=None, email=None, profilePictur
 
 #Ver los registros de una tabla
 def ver_usuarios():
-    for usuario in usuarios.query.all():
-        print(usuario)
+    return usuarios.query.all()
         
 #Filtrar los registros de una tabla por id (solo que sea exactamente igual a)
 def encontrar_usuario(id_usuario):

@@ -89,3 +89,9 @@ def editar_usuario_form(id_usuario):
         mu.editar_usuario(id_usuario, nombre, apellidoP, password, apellidoM, correo, None, superuser)
         
         return render_template("Exito.html")
+    
+    
+@usuario_blueprint.route('/usuarios')
+def mostrar_usuarios():
+    usuarios = mu.ver_usuarios()
+    return render_template("MostrarUsuarios.html", usuarios=usuarios)
