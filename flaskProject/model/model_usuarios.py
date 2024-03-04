@@ -104,9 +104,10 @@ def eliminar_usuario(id_usuario):
     if usuario is not None:
         db.session.delete(usuario)
         db.session.commit()
+        return 0
     else:
         print("El usuario con id = "+ str(id_usuario) + " no existe")
-
+        return -1
     
 #Eliminar todos los registros
 def eliminar_todos_los_usuarios():
