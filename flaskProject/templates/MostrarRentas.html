@@ -32,7 +32,7 @@
                     </thead>
                     <tbody>
                         {% for renta in rentas %}
-                            <tr>
+                            <tr {% if renta.vencida() %}class="table-danger"{% endif %}>
                                 <td>{{ renta.idRentar }}</td>
                                 <td>{{ renta.idUsuario }}</td>
                                 <td>{{ renta.idPelicula }}</td>
