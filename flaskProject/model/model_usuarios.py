@@ -25,6 +25,7 @@ def encontrar_usuario(id_usuario):
         return str(usuario)
     else:
         print("El usuario con id = "+ str(id_usuario) + " no existe")
+        return -1
 
 # Actualizar un usuario completo
 def editar_usuario(id_usuario, nombre_nuevo, apPat_nuevo, password_nuevo, apMat_nuevo, email_nuevo, profilePicture_nuevo, superUser_nuevo):

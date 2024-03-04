@@ -50,14 +50,18 @@ def borrar_usuario():
 
 
 @usuario_blueprint.route('/edit', methods=['GET', 'POST'])
-def editar_usuario():
+def editar_usuario(mensaje=None):
     if request.method == "GET":
-        return render_template('EditarUser.html')
+        return render_template('EditarUser.html', mensaje=mensaje)
     else:
         id_usuario = request.form["idCliente"]
         print(id_usuario)
+        res = mu.encontrar_usuario(id_usuario)
         
-        return redirect(url_for('usuario.editar_usuario_form', id_usuario = id_usuario))
+        if res == -1:
+            return render_template('EditarUser.html', mensaje="El usuario con id = "+id_usuario+" no existe")
+        else:
+            return redirect(url_for('usuario.editar_usuario_form', id_usuario = id_usuario))
         
   
     
