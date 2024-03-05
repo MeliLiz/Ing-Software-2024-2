@@ -70,7 +70,11 @@ def editar_estatus_renta_form(id_renta):
         usuario = int(res[0])
         pelicula = int(res[1])
         fecha = datetime.strptime(res[2], "%Y-%m-%d %H:%M:%S")
-        dias = int(res[3])
+        dias = res[3]
+        if dias != "None":
+            dias = int(dias)
+        else:
+            dias = None
         estatus = int(res[4])
         
         return render_template('EditarRentaForm.html', usuario=usuario, pelicula=pelicula, fecha=fecha, dias=dias, estatus=estatus)
