@@ -23,8 +23,11 @@ class rentar(db.Model):
         self.estatus = estatus
         
     def vencida(self):
-        fecha_devolucion = self.fecha_renta + timedelta(days=self.dias_de_renta)
-        return (datetime.now() > fecha_devolucion) and (self.estatus == 0)
+        if self.dias_de_renta is None:
+            return False
+        else:
+            fecha_devolucion = self.fecha_renta + timedelta(days=self.dias_de_renta)
+            return (datetime.now() > fecha_devolucion) and (self.estatus == 0)
         
     def __str__(self):
         return f'{self.idUsuario},{self.idPelicula},{self.fecha_renta},{self.dias_de_renta},{self.estatus}\n'

@@ -29,6 +29,8 @@
                         <div class="invalid-feedback">
                             Por favor, ingresa un id válido.
                         </div>
+                        {% if mensaje %}<div class="invalid-feedback d-block">{{ mensaje }}</div>{% endif %}
+
                     </div>
 
                     <div class="text-center">

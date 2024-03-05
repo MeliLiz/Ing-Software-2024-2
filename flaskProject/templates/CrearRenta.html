@@ -40,6 +40,9 @@
                         </div>
                     </div>
 
+                    {% if mensaje %}<div class="invalid-feedback d-block">{{ mensaje }}</div>{% endif %}
+
+
                     <div class="mb-3">
                         <label for="inputFechaPrestamo" class="form-label mt-4 text-white">Fecha de Préstamo</label>
                         <input type="date" class="form-control" id="inputFechaPrestamo" name="inputFechaPrestamo" required>
@@ -50,7 +53,7 @@
 
                     <div class="mb-3">
                         <label for="inputDiasRenta" class="form-label mt-4 text-white">Dias de renta</label>
-                        <input type="number" class="form-control" id="inputDiasRenta" name="inputDiasRenta" placeholder="Dias de renta" min="1" required>
+                        <input type="number" class="form-control" id="inputDiasRenta" name="inputDiasRenta" placeholder="Dias de renta" min="1">
                         <div class="invalid-feedback">
                             Por favor, ingresa un número de días válido.
                         </div>

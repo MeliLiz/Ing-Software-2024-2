@@ -5,9 +5,13 @@ from alchemyClasses import db
 
 #Crear un registro
 def crear_renta(idUsuario, idPelicula, fecha_renta, dias_de_renta=5, estatus=0):
-    nueva_renta = rentar(idUsuario, idPelicula, fecha_renta, dias_de_renta, estatus)
-    db.session.add(nueva_renta)
-    db.session.commit()
+    try:
+        nueva_renta = rentar(idUsuario, idPelicula, fecha_renta, dias_de_renta, estatus)
+        db.session.add(nueva_renta)
+        db.session.commit()
+        return 0
+    except:
+        return -1
     
 #Ver los registros de una tabla
 def ver_rentas():
@@ -22,6 +26,7 @@ def encontrar_renta(id_renta):
         return str(renta)
     else:
         print("La renta con id = "+ str(id_renta) + " no existe")
+        return -1
 
 # Actualizar el id de usuario de una renta por su id
 def cambiar_id_usuario_renta_por_id(id_renta, id_usuario_nuevo):
@@ -56,9 +61,10 @@ def cambiar_estatus_renta_por_id(id_renta, estatus_nuevo):
     if renta is not None:
         renta.estatus = estatus_nuevo
         db.session.commit()
+        return 0
     else:
         print("La renta con id = "+ str(id_renta) + " no existe")
-
+        return -1
         
 #Eliminar un registro por id
 def eliminar_renta(id_renta):

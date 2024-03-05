@@ -18,15 +18,21 @@ def agregar_renta():
         dias_renta = request.form["inputDiasRenta"]
         print(dias_renta)
         
+        if dias_renta == "":
+            dias_renta = 5
+        
         if 'devuelta' in request.form:
             estatus = 1
         else:
             estatus = 0
         print(estatus)
         
-        mr.crear_renta(id_usuario, id_pelicula, fecha_renta, dias_renta, estatus)
+        ret = mr.crear_renta(id_usuario, id_pelicula, fecha_renta, dias_renta, estatus)
         
-        return render_template("Exito.html")
+        if ret == -1:
+            return render_template("CrearRenta.html", mensaje="El id de usuario o el id de pelicula no existe", id_usuario = id_usuario, id_pelicula = id_pelicula, fecha_renta = fecha_renta, dias_renta = dias_renta)
+        else:
+            return render_template("Exito.html")
     
 """@renta_blueprint.route('/borrar', methods = ['GET', 'POST'])
 def borrar_renta():
@@ -47,7 +53,12 @@ def editar_estatus_renta():
         id_renta = request.form["idRenta"]
         print(id_renta)
         
-        return redirect(url_for('renta.editar_estatus_renta_form', id_renta = id_renta))
+        res = mr.encontrar_renta(id_renta)
+        
+        if res == -1:
+            return render_template("EditarRenta.html", mensaje="La renta con id = "+id_renta+" no existe")
+        else:
+            return redirect(url_for('renta.editar_estatus_renta_form', id_renta = id_renta))
     
     
 @renta_blueprint.route('/edit/<id_renta>', methods = ["GET", "POST"])
