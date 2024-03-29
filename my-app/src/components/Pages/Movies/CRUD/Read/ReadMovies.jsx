@@ -1,9 +1,10 @@
 import { peliculas } from '../../../../../Data'
+import '../../../CSS/Read.css'
 
 export default function ReadMovies(){
     return(
         <div>
-            <h1>Read Movies</h1>
+            <h1>Movies</h1>
             {peliculas && peliculas.length >0 ? 
                 <table>
                     <thead>

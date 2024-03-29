@@ -111,6 +111,10 @@
     color: hsl(224, 98%, 58%);
   }
 
+  #sidebar nav .active i {
+    color: inherit;
+  }
+
   button {
     color: #3992ff;
     font-weight: 500;
@@ -133,5 +137,5 @@
   }
 
   .active{
-    background-color: #3992ff;
+    background-color: #8644e2;
   }
