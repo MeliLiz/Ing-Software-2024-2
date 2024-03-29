@@ -76,6 +76,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
   }
   
   #sidebar li {
@@ -129,4 +130,8 @@
     background-color: white;
     line-height: 1.5;
     margin: 0;
+  }
+
+  .active{
+    background-color: #3992ff;
   }

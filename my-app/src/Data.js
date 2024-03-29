@@ -1,5 +1,5 @@
 
-  const peliculas = [
+  export let peliculas = [
     {idPelicula: 1, nombre: 'Titanic', genero: 'Drama', duracion: 210, inventario: 10},
     {idPelicula: 2, nombre: 'Terminator', genero: 'Accion', duracion: 120, inventario: 5},
     {idPelicula: 3, nombre: 'Rapidos y Furiosos', genero: 'Accion', duracion: 180, inventario: 7},
@@ -12,7 +12,7 @@
     {idPelicula: 10, nombre: 'Akira', genero: 'Anime', duracion: 180, inventario: 9}
   ]
 
-  const usuarios = [
+  export let usuarios = [
     {idUsuario: 1, nombre: 'Juan', apPat: 'Perez', apMat: 'Gomez', password: '1234', email: 'juan@gmail.com', profilePicture: null, superUser: 0},
     {idUsuario: 2, nombre: 'Maria', apPat: 'Gomez', apMat: "Martinez", password: 'abjs', email: 'maria@gmail.com', profilePicture: null, superUser: 0},
     {idUsuario: 3, nombre: 'Pedro', apPat: 'Lopez', apMat: 'Hernandez', password: 'LKNDW8', email: 'pedrol@gmail.com', profilePicture: null, superUser: 0},
@@ -25,7 +25,7 @@
     {idUsuario: 10, nombre: 'Jin', apPat: 'Blanco', apMat: 'Rodríguez', password: 'lkfjo', email: 'jin@gmail.com', profilePicture: null, superUser:1}
   ]
 
-  const rentas = [
+  export let rentas = [
     {idRentar: 1, idUsuario: 1, idPelicula: 1, fecha_renta: new Date(2021, 7, 14), dias_de_renta: 10, estatus: 0},
     {idRentar: 2, idUsuario: 2, idPelicula: 2, fecha_renta: new Date(2021, 7, 14), dias_de_renta: 10, estatus: 0},
     {idRentar: 3, idUsuario: 3, idPelicula: 3, fecha_renta: new Date(2021, 7, 14), dias_de_renta: 10, estatus: 0},

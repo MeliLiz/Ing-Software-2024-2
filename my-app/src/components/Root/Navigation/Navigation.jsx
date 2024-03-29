@@ -1,5 +1,5 @@
 import './Navigation.css'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Navigation(){
     return(
@@ -32,16 +32,16 @@ export default function Navigation(){
           <nav>
             <ul>
               <li>
-                <Link to='/'>Home</Link>
+                <NavLink to='/'>Home</NavLink>
               </li>
               <li>
-                <Link to='movies'>Movies</Link>
+                <NavLink to='movies'>Movies</NavLink>
               </li>
               <li>
-                <Link to='users'>Users</Link>
+                <NavLink to='users'>Users</NavLink>
               </li>
               <li>
-                <Link to='rents'>Rents</Link>
+                <NavLink to='rents'>Rents</NavLink>
               </li>
             </ul>
           </nav>
