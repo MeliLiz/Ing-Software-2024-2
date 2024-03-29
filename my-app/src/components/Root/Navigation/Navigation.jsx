@@ -1,10 +1,11 @@
 import './Navigation.css'
+import { Link } from 'react-router-dom';
 
 export default function Navigation(){
     return(
         <>
         <div id="sidebar">
-          <h1>React Router Contacts</h1>
+          <h1>ClonBuster</h1>
           <div>
             <form id="search-form" role="search">
               <input
@@ -31,15 +32,20 @@ export default function Navigation(){
           <nav>
             <ul>
               <li>
-                <a href={`/contacts/1`}>Your Name</a>
+                <Link to='/'>Home</Link>
               </li>
               <li>
-                <a href={`/contacts/2`}>Your Friend</a>
+                <Link to='movies'>Movies</Link>
+              </li>
+              <li>
+                <Link to='users'>Users</Link>
+              </li>
+              <li>
+                <Link to='rents'>Rents</Link>
               </li>
             </ul>
           </nav>
         </div>
-        <div id="detail"></div>
       </>
     )
 }

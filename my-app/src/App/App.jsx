@@ -2,7 +2,24 @@ import './App.css';
 import Root from '../components/Root/Root.jsx'
 import { Home } from '../components/Pages/Home/Home.jsx';
 import { Movies } from '../components/Pages/Movies/Movies.jsx';
+import  Users from '../components/Pages/Users/Users.jsx';
+import  Rents  from '../components/Pages/Rents/Rents.jsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import CreateMovie from '../components/Pages/Movies/CRUD/Create/CreateMovie.jsx';
+import ReadMovies from '../components/Pages/Movies/CRUD/Read/ReadMovies.jsx';
+import UpdateMovies from '../components/Pages/Movies/CRUD/Update/Update.jsx';
+import DeleteMovies from '../components/Pages/Movies/CRUD/Delete/DeleteMovie.jsx';
+import CreateUser from '../components/Pages/Users/CRUD/Create/CreateUser.jsx';
+import ReadUsers from '../components/Pages/Users/CRUD/Read/ReadUsers.jsx';
+import UpdateUsers from '../components/Pages/Users/CRUD/Update/UpdateUser.jsx';
+import DeleteUsers from '../components/Pages/Users/CRUD/Delete/DeleteUser.jsx';
+import CreateRent from '../components/Pages/Rents/CRU/Create/CreateRent.jsx';
+import ReadRents from '../components/Pages/Rents/CRU/Read/ReadRents.jsx';
+import UpdateRents from '../components/Pages/Rents/CRU/Update/UpdateRent.jsx';
+import Error from '../components/Error.jsx';
+
+
+
 
 
 const router = createBrowserRouter(
@@ -10,11 +27,26 @@ const router = createBrowserRouter(
     { 
       path: '/', 
       element: <Root />, 
+      errorElement: <Error/>,
       children: [
         {path: '/', element: <Home/>},
-        {path: 'movies', element: <Movies /> }
+        {path: 'movies', element: <Movies /> },
+        {path: 'users', element: <Users /> },
+        {path: 'rents', element: <Rents /> },
+        {path: 'movies/create', element: <CreateMovie/>},
+        {path: 'movies/read', element: <ReadMovies/>},
+        {path: 'movies/update', element: <UpdateMovies/>},
+        {path:'movies/delete', element: <DeleteMovies/>},
+        {path: 'users/create', element: <CreateUser/>},
+        {path: 'users/read', element: <ReadUsers/>},
+        {path: 'users/update', element: <UpdateUsers/>},
+        {path: 'users/delete', element: <DeleteUsers/>},
+        {path: "rents/create", element: <CreateRent/>},
+        {path: "rents/read", element: <ReadRents/>},
+        {path: "rents/update", element: <UpdateRents/>},
       ]
     },
+    
     
   ]
 )
