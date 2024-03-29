@@ -1,20 +1,24 @@
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
+import '../CSS/Category.css'
 
 export default function Rents(){
     return(
-        <div>
+        <>
             <h1>Rents</h1>
-            <ul>
-                <li>
-                    <Link to='/rents/create'>Create</Link>
-                </li>
-                <li>
-                    <Link to='/rents/read'>Read</Link>
-                </li>
-                <li>
-                    <Link to='/rents/update'>Update</Link>
-                </li>
-            </ul>
-        </div>
+            <div className="card-container">
+                <div className="card">
+                    <Link to='create'>Create</Link>
+                </div>
+                <div className="card">
+                    <Link to='read'>Read</Link>
+                </div>
+                <div className="card">
+                    <Link to='update'>Update</Link>
+                </div>
+            </div>
+            <div>
+                <Outlet/>
+            </div>
+        </>
     )
 }

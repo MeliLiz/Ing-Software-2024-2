@@ -1,23 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import '../CSS/Category.css'
 
 export function Movies() {
   return (
-    <div>
+    <>
       <h1>Movies</h1>
-      <ul>
-        <li>
-          <Link to='/movies/create'>Create</Link>
-        </li>
-        <li>
-          <Link to='/movies/read'>Read</Link>
-        </li>
-        <li>
-          <Link to='/movies/update'>Update</Link>
-        </li>
-        <li>
-          <Link to='/movies/delete'>Delete</Link>
-        </li>
-      </ul>
-    </div>
+      <div className="card-container">
+        <div className="card">
+          <Link to='create'>Create</Link>
+        </div>
+        <div className="card">
+          <Link to='read'>Read</Link>
+        </div>
+        <div className="card">
+          <Link to='update'>Update</Link>
+        </div>
+        <div className="card">
+          <Link to='delete'>Delete</Link>
+        </div>
+
+      </div>
+      <div>
+        <Outlet/>
+      </div>
+    </>
   );
 }

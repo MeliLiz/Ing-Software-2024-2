@@ -1,23 +1,27 @@
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
+import '../CSS/Category.css'
 
 export default function Users(){
     return(
-        <div>
+        <>
             <h1>Users</h1>
-            <ul>
-                <li>
-                    <Link to='/users/create'>Create</Link>
-                </li>
-                <li>
-                    <Link to='/users/read'>Read</Link>
-                </li>
-                <li>
-                    <Link to='/users/update'>Update</Link>
-                </li>
-                <li>
-                    <Link to='/users/delete'>Delete</Link>
-                </li>
-            </ul>
-        </div>
+            <div className="card-container">
+                <div className="card">
+                    <Link to='create'>Create</Link>
+                </div>
+                <div className="card">
+                    <Link to='read'>Read</Link>
+                </div>
+                <div className="card">
+                    <Link to='update'>Update</Link>
+                </div>
+                <div className="card">
+                    <Link to='delete'>Delete</Link>
+                </div>
+            </div>
+            <div>
+                <Outlet/>
+            </div>
+        </>
     )
 }

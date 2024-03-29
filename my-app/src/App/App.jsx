@@ -17,6 +17,7 @@ import CreateRent from '../components/Pages/Rents/CRU/Create/CreateRent.jsx';
 import ReadRents from '../components/Pages/Rents/CRU/Read/ReadRents.jsx';
 import UpdateRents from '../components/Pages/Rents/CRU/Update/UpdateRent.jsx';
 import Error from '../components/Error.jsx';
+import Default from '../components/Pages/Movies/Default.jsx';
 
 
 
@@ -30,20 +31,36 @@ const router = createBrowserRouter(
       errorElement: <Error/>,
       children: [
         {path: '/', element: <Home/>},
-        {path: 'movies', element: <Movies /> },
-        {path: 'users', element: <Users /> },
-        {path: 'rents', element: <Rents /> },
-        {path: 'movies/create', element: <CreateMovie/>},
-        {path: 'movies/read', element: <ReadMovies/>},
-        {path: 'movies/update', element: <UpdateMovies/>},
-        {path:'movies/delete', element: <DeleteMovies/>},
-        {path: 'users/create', element: <CreateUser/>},
-        {path: 'users/read', element: <ReadUsers/>},
-        {path: 'users/update', element: <UpdateUsers/>},
-        {path: 'users/delete', element: <DeleteUsers/>},
-        {path: "rents/create", element: <CreateRent/>},
-        {path: "rents/read", element: <ReadRents/>},
-        {path: "rents/update", element: <UpdateRents/>},
+        {path: 'movies', 
+        element: <Movies />,
+        children: [
+          {path: 'create', element: <CreateMovie/>},
+          {path: 'read', element: <ReadMovies/>},
+          {path: 'update', element: <UpdateMovies/>},
+          {path:'delete', element: <DeleteMovies/>}
+
+        ]
+       },
+        {path: 'users', 
+        element: <Users />,
+        children: [
+          {path: 'create', element: <CreateUser/>},
+          {path: 'read', element: <ReadUsers/>},
+          {path: 'update', element: <UpdateUsers/>},
+          {path: 'delete', element: <DeleteUsers/>},
+        ]
+      },
+        {path: 'rents', 
+        element: <Rents />,
+        children: [
+          {path: "create", element: <CreateRent/>},
+          {path: "read", element: <ReadRents/>},
+          {path: "update", element: <UpdateRents/>}
+        ]
+      },
+        
+        
+        
       ]
     },
     
