@@ -69,3 +69,35 @@ export function editUser(idUser, name, apPat, apMat, password, email, superUser)
         alert('The user does not exist')
     }
 }
+
+export function editMovie(movieId,title, genre, length, stock){
+    const movie = isMovieRegistered(movieId)
+    if (movie){
+        const index = peliculas.indexOf(movie)
+        const newMovie = {
+            idPelicula: movieId,
+            nombre: title,
+            genero: genre,
+            duracion: length,
+            inventario: stock
+        }
+        peliculas[index] = newMovie
+        alert('Movie updated successfully')
+    }else{
+        alert('The movie does not exist')
+    }
+}
+
+export function editRent(rentId, status){
+    console.log(rentId)
+    console.log(status)
+    const rent = isRentRegistered(rentId)
+    console.log(rent)
+    if(rent){
+        const index = rentas.indexOf(rent)
+        rentas[index].estatus= status
+        alert('Rent updated successfully')
+    }else{
+        alert('The rent does not exist')
+    }
+}

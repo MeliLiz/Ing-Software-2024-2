@@ -7,8 +7,6 @@ export default function UserDetail(){
     const id = parseInt(params.userId)
     const user = isUserRegistered(id)
 
-    console.log(user)
-
     const handleSubmit = (e) => {
         e.preventDefault()
         editUser(id,e.target.name.value, e.target.apPat.value, e.target.apMat.value, e.target.password.value, e.target.email.value, e.target.superUser.checked ? 1 : 0)
@@ -30,7 +28,7 @@ export default function UserDetail(){
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" defaultValue={user.password} required/>
                 <label htmlFor="superUser">Super User</label>
-                <input type="checkbox" id="superUser" name="superUser"/>
+                <input type="checkbox" id="superUser" name="superUser" defaultChecked={user.superUser===1}/>
                 <button type="submit">Edit</button>
             </form>
         </div>
