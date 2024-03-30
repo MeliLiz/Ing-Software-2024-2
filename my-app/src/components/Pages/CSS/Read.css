@@ -1,9 +1,12 @@
 table{
-    width: 100%;
+    width: auto;
+    margin-right: auto;
+    margin-left: calc(50% - 17rem);
+    border-collapse: collapse;
 }
 
 th, td{
-    padding-left: 1rem;
+    padding-left: 2rem;
     text-align: left;
 }
 
