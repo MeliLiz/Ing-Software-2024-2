@@ -48,3 +48,24 @@ export function isUserRegistered(idUser){
 export function isRentRegistered(idRent){
     return rentas.find(rent => rent.idRentar === idRent)
 }
+
+export function editUser(idUser, name, apPat, apMat, password, email, superUser){
+    const user = isUserRegistered(idUser)
+    if(user){
+        const index = usuarios.indexOf(user)
+        const newUser = {
+            idUsuario: idUser,
+            nombre: name,
+            apPat: apPat,
+            apMat: apMat,
+            password: password,
+            email: email,
+            profilePicture: null,
+            superUser: superUser
+        }
+        usuarios[index] = newUser
+        alert('User updated successfully')
+    }else{
+        alert('The user does not exist')
+    }
+}
