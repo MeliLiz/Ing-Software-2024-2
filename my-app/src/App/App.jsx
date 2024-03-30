@@ -17,7 +17,7 @@ import CreateRent from '../components/Pages/Rents/CRU/Create/CreateRent.jsx';
 import ReadRents from '../components/Pages/Rents/CRU/Read/ReadRents.jsx';
 import UpdateRents from '../components/Pages/Rents/CRU/Update/UpdateRent.jsx';
 import Error from '../components/Error.jsx';
-import Default from '../components/Pages/Movies/Default.jsx';
+import MovieDetail from '../components/Pages/Movies/CRUD/Read/MovieDetail.jsx';
 
 
 
@@ -36,6 +36,7 @@ const router = createBrowserRouter(
         children: [
           {path: 'create', element: <CreateMovie/>},
           {path: 'read', element: <ReadMovies/>},
+          {path: ':movieId', element: <MovieDetail/>},
           {path: 'update', element: <UpdateMovies/>},
           {path:'delete', element: <DeleteMovies/>}
 
