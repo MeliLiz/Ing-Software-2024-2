@@ -1,7 +1,17 @@
 import { usuarios } from "../../../../../Data"
 import '../../../CSS/Read.css'
+import { useNavigate } from "react-router-dom"
 
 export default function ReadUsers(){
+
+    const navigate = useNavigate()
+
+    const handleEdit = (userId) => {
+        navigate(`/users/${userId}`)
+    }
+
+    const handleDelete = () => {}
+
     return(
         <div>
             <h1>Users</h1>
@@ -28,8 +38,8 @@ export default function ReadUsers(){
                                     <td>{usuario.email}</td>
                                     <td>{usuario.superUser}</td>
                                     <td>
-                                        <button>Editar</button>
-                                        <button>Eliminar</button>
+                                        <button onClick={() => handleEdit(usuario.idUsuario)}>Editar</button>
+                                        <button onClick={() => handleDelete(usuario.idUsuario)}>Eliminar</button>
                                     </td>
                                 </tr>
                             ) }

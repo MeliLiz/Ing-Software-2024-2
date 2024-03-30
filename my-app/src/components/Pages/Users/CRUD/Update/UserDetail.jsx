@@ -1,3 +1,4 @@
+import '../../../CSS/Create.css'
 import { useParams } from "react-router-dom"
 import { isUserRegistered, editUser } from "../../../../../DataFunctions"
 

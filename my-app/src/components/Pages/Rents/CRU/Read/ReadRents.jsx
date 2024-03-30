@@ -1,7 +1,15 @@
 import { rentas } from "../../../../../Data"
 import '../../../CSS/Read.css'
+import { useNavigate } from "react-router-dom"
 
 export default function ReadRents(){
+
+    const navigate = useNavigate()
+
+    const handleEdit = (rentId) => {
+        navigate(`/rents/${rentId}`)
+    }
+
     return(
         <div>
             <h1>Rents</h1>
@@ -28,7 +36,7 @@ export default function ReadRents(){
                                     <td>{renta.dias_de_renta}</td>
                                     <td>{renta.estatus}</td>
                                     <td>
-                                        <button>Editar</button>
+                                        <button onClick={()=> handleEdit(renta.idRentar)}>Editar</button>
                                     </td>
                                 </tr>
                             ) }

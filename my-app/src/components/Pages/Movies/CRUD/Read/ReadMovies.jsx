@@ -1,7 +1,17 @@
 import { peliculas } from '../../../../../Data'
 import '../../../CSS/Read.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function ReadMovies(){
+
+    const navigate = useNavigate()
+
+    const handleEdit = (movieId) => {
+        navigate(`/movies/${movieId}`)
+    }
+
+    const handleDelete = () => {}
+
     return(
         <div>
             <h1>Movies</h1>
@@ -26,8 +36,8 @@ export default function ReadMovies(){
                                     <td>{pelicula.duracion}</td>
                                     <td>{pelicula.inventario}</td>
                                     <td>
-                                        <button>Editar</button>
-                                        <button>Eliminar</button>
+                                        <button onClick={() => handleEdit(pelicula.idPelicula)}>Editar</button>
+                                        <button onClick={() => handleDelete(pelicula.idPelicula)}>Eliminar</button>
                                     </td>
                                 </tr>
                             ) }
