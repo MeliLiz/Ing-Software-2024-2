@@ -1,11 +1,9 @@
 import '../../../CSS/Update.css'
-import { useNavigate} from "react-router-dom"
 import { useState } from 'react'
-import './DeleteMovie.css'
 import { deleteMovie } from '../../../../../DataFunctions'
+import Card from '../../../../ConfirmationCard/Card.jsx'
 
 export default function DeleteMovie(){
-    const navigate = useNavigate()
     const [confirm, setConfirm] = useState(false)
     const [movieId, setMovieId] = useState(0)
 
@@ -17,11 +15,12 @@ export default function DeleteMovie(){
     }
 
     const handleConfirm = () => {
-        console.log(movieId)
         deleteMovie(movieId)
+        setConfirm(false)
     }
 
     const handleCancel = () => {
+        setConfirm(false)
         alert('Delete canceled')
     }
 
@@ -35,11 +34,7 @@ export default function DeleteMovie(){
             </form>
 
             {confirm &&
-                <div className='confirmation-card'>
-                    <p>Are you sure you want to delete this movie?</p>
-                    <button onClick={handleConfirm}>Confirm</button>
-                    <button onClick={handleCancel}>Cancel</button>
-                </div>
+                <Card message='Are you sure you want to delete this movie?' handleConfirm={handleConfirm} handleCancel={handleCancel}/>
             }
 
         </div>
