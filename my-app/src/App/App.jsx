@@ -19,6 +19,7 @@ import UpdateRents from '../components/Pages/Rents/CRU/Update/UpdateRent.jsx';
 import Error from '../components/Error.jsx';
 import MovieDetail from '../components/Pages/Movies/CRUD/Update/MovieDetail.jsx';
 import RentDetail from '../components/Pages/Rents/CRU/Update/RentDetail.jsx';
+import UserDetail from '../components/Pages/Users/CRUD/Update/UserDetail.jsx';
 
 
 
@@ -50,6 +51,7 @@ const router = createBrowserRouter(
           {path: 'read', element: <ReadUsers/>},
           {path: 'update', element: <UpdateUsers/>},
           {path: 'delete', element: <DeleteUsers/>},
+          {path: ':userId', element: <UserDetail/>}
         ]
       },
         {path: 'rents', 

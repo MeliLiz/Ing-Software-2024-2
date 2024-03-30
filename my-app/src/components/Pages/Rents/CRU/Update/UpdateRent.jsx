@@ -9,7 +9,7 @@ export default function UpdateRent(){
         e.preventDefault()
         const rentId = parseInt(e.target.rentId.value)
         if(isRentRegistered(rentId)){
-            navigate(`/movies/${rentId}`)
+            navigate(`/rents/${rentId}`)
         }else{
             alert('Movie not found')
         }
