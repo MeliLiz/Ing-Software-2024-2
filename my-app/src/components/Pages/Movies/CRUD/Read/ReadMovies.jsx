@@ -1,16 +1,34 @@
 import { peliculas } from '../../../../../Data'
 import '../../../CSS/Read.css'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import Card from '../../../../ConfirmationCard/Card'
+import { deleteMovie } from '../../../../../DataFunctions'
 
 export default function ReadMovies(){
 
     const navigate = useNavigate()
+    const [confirm, setConfirm] = useState(false)
+    const [movieId, setMovieId] = useState(0)
 
     const handleEdit = (movieId) => {
         navigate(`/movies/${movieId}`)
     }
 
-    const handleDelete = () => {}
+    const handleDelete = (movieId) => {
+        setMovieId(movieId)
+        setConfirm(true)
+    }
+
+    const handleConfirm = () => {
+        deleteMovie(movieId)
+        setConfirm(false)
+    }
+
+    const handleCancel = () => {
+        setConfirm(false)
+        alert('Delete canceled')
+    }
 
     return(
         <div>
@@ -45,6 +63,7 @@ export default function ReadMovies(){
                     </tbody>
                 </table> : <h2>No hay peliculas</h2>
             }
+            {confirm && <Card message='Are you sure you want to delete this movie?' handleConfirm={handleConfirm} handleCancel={handleCancel}/>}
         </div>
     )
 }

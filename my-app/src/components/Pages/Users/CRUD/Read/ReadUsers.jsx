@@ -1,16 +1,35 @@
 import { usuarios } from "../../../../../Data"
 import '../../../CSS/Read.css'
 import { useNavigate } from "react-router-dom"
+import { deleteUser } from "../../../../../DataFunctions"
+import { useState } from "react"
+import Card from "../../../../ConfirmationCard/Card"
 
 export default function ReadUsers(){
 
     const navigate = useNavigate()
 
+    const [confirm, setConfirm] = useState(false)
+    const [userId, setUserId] = useState(0)
+
     const handleEdit = (userId) => {
         navigate(`/users/${userId}`)
     }
 
-    const handleDelete = () => {}
+    const handleDelete = (userId) => {
+        setUserId(userId)
+        setConfirm(true)
+    }
+
+    const handleConfirm = () => {
+        deleteUser(userId)
+        setConfirm(false)
+    }
+
+    const handleCancel = () => {
+        setConfirm(false)
+        alert('Delete canceled')
+    }
 
     return(
         <div>
@@ -47,6 +66,7 @@ export default function ReadUsers(){
                     </tbody>
                 </table> : <h2>No hay usuarios</h2>
             }
+            {confirm && <Card message='Are you sure you want to delete this user?' handleConfirm={handleConfirm} handleCancel={handleCancel}/>}
         </div>
     )
         
