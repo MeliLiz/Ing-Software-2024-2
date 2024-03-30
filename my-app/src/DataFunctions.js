@@ -112,3 +112,14 @@ export function deleteMovie(movieId){
         alert('The movie does not exist')
     }
 }
+
+export function deleteUser(userId){
+    const user = isUserRegistered(userId)
+    if(user){
+        const index = usuarios.indexOf(user)
+        usuarios.splice(index, 1)
+        alert('User deleted successfully')
+    }else{
+        alert('The user does not exist')
+    }
+}
