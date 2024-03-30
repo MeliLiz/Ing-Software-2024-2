@@ -17,7 +17,8 @@ import CreateRent from '../components/Pages/Rents/CRU/Create/CreateRent.jsx';
 import ReadRents from '../components/Pages/Rents/CRU/Read/ReadRents.jsx';
 import UpdateRents from '../components/Pages/Rents/CRU/Update/UpdateRent.jsx';
 import Error from '../components/Error.jsx';
-import MovieDetail from '../components/Pages/Movies/CRUD/Read/MovieDetail.jsx';
+import MovieDetail from '../components/Pages/Movies/CRUD/Update/MovieDetail.jsx';
+import RentDetail from '../components/Pages/Rents/CRU/Update/RentDetail.jsx';
 
 
 
@@ -56,7 +57,8 @@ const router = createBrowserRouter(
         children: [
           {path: "create", element: <CreateRent/>},
           {path: "read", element: <ReadRents/>},
-          {path: "update", element: <UpdateRents/>}
+          {path: "update", element: <UpdateRents/>},
+          {path: ":rentId", element: <RentDetail/>}
         ]
       },
         

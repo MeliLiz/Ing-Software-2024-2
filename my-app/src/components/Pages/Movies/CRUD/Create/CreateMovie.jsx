@@ -1,18 +1,10 @@
 import '../../../CSS/Create.css'
-import { peliculas } from '../../../../../Data'
-
+import { createMovie } from '../../../../../DataFunctions'
 export default function CreateMovie(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        peliculas.push({
-            idPelicula: peliculas.length + 1,
-            nombre: e.target.title.value,
-            genero: e.target.genre.value,
-            duracion: e.target.length.value,
-            inventario: e.target.stock.value
-        })
-        alert('Movie registered successfully')
+        createMovie(e.target.title.value, e.target.genre.value, e.target.length.value, e.target.stock.value)
     }
 
     return(

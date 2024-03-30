@@ -1,19 +1,11 @@
 import '../../../CSS/Create.css'
-import { rentas } from '../../../../../Data'
+import { createRent } from '../../../../../DataFunctions';
 
 export default function CreateRent(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        rentas.push({
-            idRentar: rentas.length + 1,
-            idUsuario: e.target.idUsuario.value,
-            idPelicula: e.target.idPelicula.value,
-            fecha_renta: new Date(e.target.fechaRenta.value),
-            dias_de_renta: e.target.days.value,
-            estatus: e.target.status.checked ? 1 : 0
-        })
-        alert('Rent registered successfully')
+        createRent(e.target.idUsuario.value, e.target.idPelicula.value, e.target.fechaRenta.value, e.target.days.value, e.target.status.checked ? 1 : 0)
     }
 
     return(

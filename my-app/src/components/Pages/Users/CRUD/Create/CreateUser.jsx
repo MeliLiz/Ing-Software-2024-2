@@ -1,21 +1,11 @@
 import '../../../CSS/Create.css'
-import { usuarios } from '../../../../../Data'
+import { createUser } from '../../../../../DataFunctions'
 
 export default function CreateUser(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        usuarios.push({
-            idUsuario: usuarios.length + 1,
-            nombre: e.target.name.value,
-            apPat: e.target.apPat.value,
-            apMat: e.target.apMat.value,
-            password: e.target.password.value,
-            email: e.target.email.value,
-            profilePicture: null,
-            superUser: e.target.superUser.checked ? 1 : 0
-        })
-        alert('User registered successfully')
+        createUser(e.target.name.value, e.target.apPat.value, e.target.apMat.value, e.target.password.value, e.target.email.value, e.target.superUser.checked ? 1 : 0)
     }
 
     return(
