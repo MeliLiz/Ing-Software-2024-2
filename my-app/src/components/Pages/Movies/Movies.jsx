@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import '../CSS/Category.css'
 
 export function Movies() {
@@ -7,16 +7,16 @@ export function Movies() {
       <h1>Movies</h1>
       <div className="card-container">
         <div className="card">
-          <Link to='create'>Create</Link>
+          <NavLink to='create'>Register a movie</NavLink>
         </div>
         <div className="card">
-          <Link to='read'>Read</Link>
+          <NavLink to='read'>Our movies</NavLink>
         </div>
         <div className="card">
-          <Link to='update'>Update</Link>
+          <NavLink to='update'>Update a movie</NavLink>
         </div>
         <div className="card">
-          <Link to='delete'>Delete</Link>
+          <NavLink to='delete'>Delete a movie</NavLink>
         </div>
 
       </div>

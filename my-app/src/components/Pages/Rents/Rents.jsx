@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 import '../CSS/Category.css'
 
 export default function Rents(){
@@ -7,13 +7,13 @@ export default function Rents(){
             <h1>Rents</h1>
             <div className="card-container">
                 <div className="card">
-                    <Link to='create'>Create</Link>
+                    <NavLink to='create'>Register a rent</NavLink>
                 </div>
                 <div className="card">
-                    <Link to='read'>Read</Link>
+                    <NavLink to='read'>Our rents</NavLink>
                 </div>
                 <div className="card">
-                    <Link to='update'>Update</Link>
+                    <NavLink to='update'>Update a rent</NavLink>
                 </div>
             </div>
             <div>

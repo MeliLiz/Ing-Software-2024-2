@@ -104,7 +104,7 @@
   }
   
   #sidebar nav a.active {
-    background: hsl(224, 98%, 58%);
+    background: darkgoldenrod;
     color: white;
   }
   
@@ -117,7 +117,7 @@
   }
 
   button {
-    color: #3992ff;
+    color: rgb(128, 93, 6);
     font-weight: 500;
   }
 
@@ -135,8 +135,4 @@
     background-color: white;
     line-height: 1.5;
     margin: 0;
-  }
-
-  .active{
-    background-color: #8644e2;
   }

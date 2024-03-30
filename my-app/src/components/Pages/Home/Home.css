@@ -1,14 +1,20 @@
+.cont{
+    align-items: center;
+    margin-left: 17rem;
+}
+
 .title {
     font-size: 3rem; /* Tamaño del título */
     text-align: center; /* Centra el título horizontalmente */
     margin-top: 50px; /* Margen superior */
-  }
-  
-  p {
-    font-size: 20px; /* Tamaño del texto */
-    margin-bottom: 20px; /* Margen inferior */
-    text-align: center;
-  }
+    margin-left: 0;
+}
+
+p {
+font-size: 20px; /* Tamaño del texto */
+margin-bottom: 20px; /* Margen inferior */
+text-align: center;
+}
 
 .container {
     max-width: 800px; /* Ancho máximo del contenedor */
@@ -25,6 +31,7 @@ img{
   footer {
     position: fixed;
     bottom: 0;
+    margin-left: 17px;
     width: 100%;
     background-color: #333; /* Color de fondo del footer */
     color: #fff; /* Color del texto del footer */
@@ -35,6 +42,7 @@ img{
     background-color: inherit; /* Color de fondo del footer */
     color: #999; /* Color del texto del pie de página */
     font-size: 18px; /* Tamaño del texto del pie de página */;
-    
+    margin-right:10%;
+
 }
   
