@@ -36,7 +36,7 @@ export default function ReadRents(){
                                     <td>{renta.dias_de_renta}</td>
                                     <td>{renta.estatus}</td>
                                     <td>
-                                        <button onClick={()=> handleEdit(renta.idRentar)}>Editar</button>
+                                        <button onClick={()=> handleEdit(renta.idRentar)}>Edit</button>
                                     </td>
                                 </tr>
                             ) }

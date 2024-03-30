@@ -5,30 +5,8 @@ export default function Navigation(){
     return(
         <>
         <div id="sidebar">
-          <h1>ClonBuster</h1>
-          <div>
-            <form id="search-form" role="search">
-              <input
-                id="q"
-                aria-label="Search contacts"
-                placeholder="Search"
-                type="search"
-                name="q"
-              />
-              <div
-                id="search-spinner"
-                aria-hidden
-                hidden={true}
-              />
-              <div
-                className="sr-only"
-                aria-live="polite"
-              ></div>
-            </form>
-            <form method="post">
-              <button type="submit">New</button>
-            </form>
-          </div>
+          <h1><img src='https://images.vexels.com/media/users/3/321274/isolated/preview/711dbd37f96170b5832d201e88b59787-movie-tickets-icon.png'/>ClonBuster</h1>
+          <div></div>
           <nav>
             <ul>
               <li>

@@ -54,8 +54,8 @@ export default function ReadMovies(){
                                     <td>{pelicula.duracion}</td>
                                     <td>{pelicula.inventario}</td>
                                     <td>
-                                        <button onClick={() => handleEdit(pelicula.idPelicula)}>Editar</button>
-                                        <button onClick={() => handleDelete(pelicula.idPelicula)}>Eliminar</button>
+                                        <button onClick={() => handleEdit(pelicula.idPelicula)}>Edit</button>
+                                        <button onClick={() => handleDelete(pelicula.idPelicula)}>Delete</button>
                                     </td>
                                 </tr>
                             ) }

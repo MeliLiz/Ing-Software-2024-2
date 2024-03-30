@@ -1,5 +1,40 @@
-h1{
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.title {
+    font-size: 3rem; /* Tamaño del título */
+    text-align: center; /* Centra el título horizontalmente */
+    margin-top: 50px; /* Margen superior */
+  }
+  
+  p {
+    font-size: 20px; /* Tamaño del texto */
+    margin-bottom: 20px; /* Margen inferior */
+    text-align: center;
+  }
+
+.container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
+img{
+    width: 75%;
+    max-width: 50rem;
+    display: block;
+    margin: 10px auto;
+}
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333; /* Color de fondo del footer */
+    color: #fff; /* Color del texto del footer */
+    padding: 20px 0; /* Relleno del footer */
+  }
+  
+  footer p {
+    background-color: inherit; /* Color de fondo del footer */
+    color: #999; /* Color del texto del pie de página */
+    font-size: 18px; /* Tamaño del texto del pie de página */;
+    
+}
+  

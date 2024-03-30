@@ -57,8 +57,8 @@ export default function ReadUsers(){
                                     <td>{usuario.email}</td>
                                     <td>{usuario.superUser}</td>
                                     <td>
-                                        <button onClick={() => handleEdit(usuario.idUsuario)}>Editar</button>
-                                        <button onClick={() => handleDelete(usuario.idUsuario)}>Eliminar</button>
+                                        <button onClick={() => handleEdit(usuario.idUsuario)}>Edit</button>
+                                        <button onClick={() => handleDelete(usuario.idUsuario)}>Delete</button>
                                     </td>
                                 </tr>
                             ) }
