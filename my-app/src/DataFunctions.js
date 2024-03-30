@@ -101,3 +101,14 @@ export function editRent(rentId, status){
         alert('The rent does not exist')
     }
 }
+
+export function deleteMovie(movieId){
+    const movie = isMovieRegistered(movieId)
+    if(movie){
+        const index = peliculas.indexOf(movie)
+        peliculas.splice(index, 1)
+        alert('Movie deleted successfully')
+    }else{
+        alert('The movie does not exist')
+    }
+}
