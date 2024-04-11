@@ -39,9 +39,9 @@ export default function ReadUsers(){
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Apellido paterno</th>
-                            <th>Apellido materno</th>
+                            <th>Name</th>
+                            <th>Last name</th>
+                            <th>Second last name</th>
                             <th>Email</th>
                             <th>Superuser</th>
                         </tr>

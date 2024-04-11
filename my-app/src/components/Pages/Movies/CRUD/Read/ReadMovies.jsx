@@ -38,10 +38,10 @@ export default function ReadMovies(){
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Genero</th>
-                            <th>Duracion</th>
-                            <th>Inventario</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Duration</th>
+                            <th>Stock</th>
                         </tr>
                     </thead>
                     <tbody>
