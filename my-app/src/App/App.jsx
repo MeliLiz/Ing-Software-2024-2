@@ -20,9 +20,9 @@ import Error from '../components/Error.jsx';
 import MovieDetail from '../components/Pages/Movies/CRUD/Update/MovieDetail.jsx';
 import RentDetail from '../components/Pages/Rents/CRU/Update/RentDetail.jsx';
 import UserDetail from '../components/Pages/Users/CRUD/Update/UserDetail.jsx';
-
-
-
+import HomeMovies from '../components/Pages/Movies/HomeMovies.jsx';
+import UsersHome from '../components/Pages/Users/UsersHome.jsx';
+import RentsHome from '../components/Pages/Rents/RentsHome.jsx';
 
 
 const router = createBrowserRouter(
@@ -36,6 +36,7 @@ const router = createBrowserRouter(
         {path: 'movies', 
         element: <Movies />,
         children: [
+          {path: '', element: <HomeMovies/>},
           {path: 'create', element: <CreateMovie/>},
           {path: 'read', element: <ReadMovies/>},
           {path: ':movieId', element: <MovieDetail/>},
@@ -47,6 +48,7 @@ const router = createBrowserRouter(
         {path: 'users', 
         element: <Users />,
         children: [
+          {path: '', element: <UsersHome/>},
           {path: 'create', element: <CreateUser/>},
           {path: 'read', element: <ReadUsers/>},
           {path: 'update', element: <UpdateUsers/>},
@@ -57,6 +59,7 @@ const router = createBrowserRouter(
         {path: 'rents', 
         element: <Rents />,
         children: [
+          {path: '', element: <RentsHome/>},
           {path: "create", element: <CreateRent/>},
           {path: "read", element: <ReadRents/>},
           {path: "update", element: <UpdateRents/>},
